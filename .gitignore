@@ -1,0 +1,22 @@
+# Environnement virtuel
+.venv/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+
+# DVC (données et modèles gérés par DVC)
+data/processed/
+models/
+
+# MLflow
+mlruns/
+
+# VS Code
+.vscode/
+
+# Windows
+Thumbs.db
+desktop.ini
