@@ -1,0 +1,25 @@
+{
+  "best_model": "LogisticRegression",
+  "all_results": {
+    "RandomForest": {
+      "accuracy": 0.9729,
+      "f1_score": 0.9729,
+      "roc_auc": 0.9962
+    },
+    "GradientBoosting": {
+      "accuracy": 0.9686,
+      "f1_score": 0.9686,
+      "roc_auc": 0.9966
+    },
+    "LogisticRegression": {
+      "accuracy": 0.974,
+      "f1_score": 0.974,
+      "roc_auc": 0.9977
+    },
+    "SVM": {
+      "accuracy": 0.9745,
+      "f1_score": 0.9746,
+      "roc_auc": 0.9974
+    }
+  }
+}
