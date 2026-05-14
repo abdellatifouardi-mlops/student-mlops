@@ -1,0 +1,25 @@
+cd Desktop\student-mlops
+.venv\Scripts\activate
+mlflow ui --port 5000
+
+
+
+cd Desktop\student-mlops
+.venv\Scripts\activate
+python -m uvicorn src.api.main:app --reload --port 8000
+
+
+
+cd Desktop\student-mlops
+.venv\Scripts\activate
+python -m streamlit run app.py
+
+
+
+cd Desktop\student-mlops
+docker-compose up
+
+
+Streamlithttp://localhost:8501
+FastAPIhttp://localhost:8000/docs
+MLflowhttp://localhost:5000
