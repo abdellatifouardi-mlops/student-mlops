@@ -1,5 +1,3 @@
-version: "3.9"
-
 services:
 
   api:
@@ -13,7 +11,7 @@ services:
     restart: unless-stopped
 
   mlflow:
-    image: python:3.10-slim
+    image: python:3.11-slim
     container_name: mlops-mlflow
     ports:
       - "5000:5000"
@@ -36,3 +34,28 @@ services:
       - ./data:/app/data
       - ./metrics:/app/metrics
     restart: unless-stopped
+
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: mlops-prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    restart: unless-stopped
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: mlops-grafana
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=mlops2024
+    volumes:
+      - grafana_data:/var/lib/grafana
+    depends_on:
+      - prometheus
+    restart: unless-stopped
+
+volumes:
+  grafana_data:
