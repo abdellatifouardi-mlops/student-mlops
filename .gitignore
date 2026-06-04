@@ -22,6 +22,5 @@ Thumbs.db
 desktop.ini
 
 mlruns/
-data/raw/
 data/processed/
 models/
